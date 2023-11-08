@@ -3,7 +3,7 @@
 #define N 4         // 製品数
 #define MAX_TIME 37 // 制約条件
 
-void main(void)
+int main(void)
 {
     int flag[N] = {0, 0, 0, 0};
     char name[N] = "ABCD";
@@ -76,5 +76,5 @@ void main(void)
     }
     printf(",最大利益%d\n", m_profit);
 
-    return;
+    return 0;
 }
