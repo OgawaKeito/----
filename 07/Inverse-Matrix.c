@@ -1,17 +1,19 @@
 #include <stdio.h>
 
-#define X 2
-#define Y 2
+#define X 3
+#define Y 3
 
 double matrix[Y][X] =
     {
-        {2, 6},
-        {1, 4}};
+        {1, 2, 3},
+        {6, 0, 7},
+        {5, 1, -2}};
 
 double E[Y][X] =
     {
-        {1, 0},
-        {0, 1}};
+        {1, 0, 0},
+        {0, 1, 0},
+        {0, 0, 1}};
 
 void swap(void);
 void normalize(void);
@@ -25,10 +27,6 @@ int main(void)
         swap();
         normalize();
         Print_Arr();
-    }
-    else
-    {
-        printf("逆行列はありません。");
     }
     return 0;
 }
@@ -67,9 +65,14 @@ void swap(void)
     }
 }
 
+// 逆行説存在判定
 double judge(void)
 {
     int temp = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+    if (!temp)
+    {
+        printf("逆行列はありません。");
+    }
     return temp;
 }
 
@@ -79,6 +82,7 @@ void normalize(void)
     double temp;
     for (int k = 0; k < Y; k++)
     {
+        Print_Arr();
         temp = matrix[k][k];
         for (int i = 0; i < X; i++)
         {
@@ -119,11 +123,17 @@ void Print_Arr(void)
 
     for (int i = 0; i < Y; i++)
     {
+        printf("{");
         for (int j = 0; j < X; j++)
         {
             printf("%9.5f,", E[i][j]);
         }
-        printf("\n");
+        printf("|");
+        for (int j = 0; j < X; j++)
+        {
+            printf("%9.5f,", matrix[i][j]);
+        }
+        printf("}\n");
     }
     printf("\n");
 }

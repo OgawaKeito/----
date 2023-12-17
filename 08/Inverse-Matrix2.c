@@ -27,7 +27,9 @@ int main(void)
         normalize();
         Print_Arr();
     }
+    printf("Enterを押して終了・・・");
 
+    getchar();
     return 0;
 }
 
@@ -76,18 +78,18 @@ void swap(void)
 // 逆行説存在判定
 double judge(void)
 {
-    double temp = matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[1][0] * matrix[2][1] * matrix[0][2] + matrix[2][0] * matrix[0][1] * matrix[1][2] - matrix[0][0] * matrix[2][1] * matrix[1][2] - matrix[2][0] * matrix[1][1] * matrix[0][2] - matrix[1][0] * matrix[0][1] * matrix[2][2];
+    double detA = matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[1][0] * matrix[2][1] * matrix[0][2] + matrix[2][0] * matrix[0][1] * matrix[1][2] - matrix[0][0] * matrix[2][1] * matrix[1][2] - matrix[2][0] * matrix[1][1] * matrix[0][2] - matrix[1][0] * matrix[0][1] * matrix[2][2];
 
-    if (!temp)
+    if (!detA)
     {
         printf("逆行列はありません。");
     }
     else
     {
-        printf("\ndetA=%9.5f\n\n", temp);
+        printf("\ndetA=%9.5f\n\n", detA);
     }
 
-    return temp;
+    return detA;
 }
 
 // 正規化
@@ -119,7 +121,7 @@ void normalize(void)
             }
         }
         // 途中式
-        // Print_Arr();
+        Print_Arr();
         swap();
     }
 }

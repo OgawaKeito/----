@@ -6,7 +6,7 @@
 
 double height[N] = {170, 182, 171, 166, 168, 164, 173, 170, 172, 167, 164, 161, 180, 173, 163, 168, 165, 171, 182};
 double weight[N] = {58, 80, 66, 62, 65, 56, 76, 81, 72, 66, 61, 56, 86, 78, 52, 66, 59, 61, 66};
-double number[N];
+double number[N] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 double matrix[Y][X];
 
 double sum(double *num1, double *num2, int n);
@@ -32,16 +32,12 @@ int main(void)
     double a1 = matrix[1][2];
 
     printf("\ny = %f x + (%f)\n", a1, a0);
+    getchar();
 }
 
 // return = Σ(num1 * num2), N = 大きさ
 double sum(double *num1, double *num2, int n)
 {
-    for (int i = 0; i < N; i++)
-    {
-        number[i] = 1;
-    }
-
     double temp = 0;
     for (int i = 0; i < n; i++)
     {

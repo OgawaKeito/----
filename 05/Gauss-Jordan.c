@@ -15,9 +15,7 @@ void Print_Arr(void);
 
 int main(void)
 {
-    Print_Arr();
     swap();
-    Print_Arr();
     normalize();
     Print_Arr();
 
@@ -81,11 +79,13 @@ void normalize(void)
                 matrix[j][i] -= temp * matrix[k][i];
             }
         }
+        swap();
     }
 }
 
 // 行列表示
 void Print_Arr(void)
+
 {
     for (int i = 0; i < Y; i++)
     {
