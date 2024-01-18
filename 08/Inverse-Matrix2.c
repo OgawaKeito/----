@@ -1,23 +1,22 @@
 #include <stdio.h>
 
-#define X 3
-#define Y 3
+#define X 2
+#define Y 2
 
 double matrix[Y][X] =
     {
-        {1, 2, 3},
-        {6, 0, 7},
-        {5, 1, -2}};
+        {101.92, -13.44},
+        {-13.44, -5.92}};
 
 double E[Y][X] = {
-    {1, 0, 0},
-    {0, 1, 0},
-    {0, 0, 1}};
+    {1, 0},
+    {0, 1}};
 
 void swap(void);
 void normalize(void);
 double judge(void);
 void Print_Arr(void);
+void input(void);
 
 int main(void)
 {
@@ -27,10 +26,15 @@ int main(void)
         normalize();
         Print_Arr();
     }
-    printf("Enterを押して終了・・・");
+    // printf("Enterを押して終了・・・");
 
-    getchar();
+    // getchar();
     return 0;
+}
+
+// 入力
+void input(void)
+{
 }
 
 // 入れ替え

@@ -1,13 +1,12 @@
 #include <stdio.h>
 
-#define X 4
-#define Y 3
+#define X 2
+#define Y 2
 
 double matrix[Y][X] =
     {
-        {-2, -1, 6, 14},
-        {-1, 5, -2, 3},
-        {5, -1, 2, 6}};
+        {-2, -1},
+        {-1, 5}};
 
 void swap(void);
 void normalize(void);
@@ -87,9 +86,15 @@ void normalize(void)
 void Print_Arr(void)
 
 {
+
     for (int i = 0; i < Y; i++)
     {
-        printf("{%7.3f,%7.3f,%7.3f,%7.3f}\n", matrix[i][0], matrix[i][1], matrix[i][2], matrix[i][3]);
+        printf("{");
+        for (int j = 0; j < X; j++)
+        {
+            printf("%9.5f,", matrix[i][j]);
+        }
+        printf("}\n");
     }
     printf("\n");
 }
